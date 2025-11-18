@@ -2,7 +2,12 @@
 
 on:
   push:
-    branches: [main]  # 当main分支有推送时触发部署
+    branches: [main]
+
+permissions:  # 新增这部分，赋予推送分支的权限
+  contents: write
+  pages: write
+  id-token: write
 
 jobs:
   deploy:
@@ -12,7 +17,7 @@ jobs:
       - name: Set up Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: '20.19'  # 满足Vite的Node版本要求
+          node-version: '24.11.1'
           cache: 'npm'
       - name: Install dependencies
         run: npm ci
@@ -22,4 +27,4 @@ jobs:
         uses: peaceiris/actions-gh-pages@v4
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./dist  # 部署dist目录下的静态文件
+          publish_dir: ./dist
