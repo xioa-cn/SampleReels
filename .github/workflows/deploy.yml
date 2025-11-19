@@ -4,7 +4,7 @@ on:
   push:
     branches: [main]
 
-permissions:  # 新增这部分，赋予推送分支的权限
+permissions:
   contents: write
   pages: write
   id-token: write
