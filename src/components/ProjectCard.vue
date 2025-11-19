@@ -163,16 +163,21 @@ const getStatusColor = (status: Project['status']) => {
 
 .project-image {
   width: 100%;
-  height: 250px;
+  aspect-ratio: 16/9;
   overflow: hidden;
   background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+  position: relative;
 }
 
 .project-image img {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: center;
   transition: transform 0.3s ease;
+  position: absolute;
+  top: 0;
+  left: 0;
 }
 
 .project-card:hover .project-image img {
@@ -186,6 +191,9 @@ const getStatusColor = (status: Project['status']) => {
   align-items: center;
   justify-content: center;
   color: #9ca3af;
+  position: absolute;
+  top: 0;
+  left: 0;
 }
 
 .placeholder-image svg {
@@ -296,20 +304,38 @@ const getStatusColor = (status: Project['status']) => {
 
 /* 响应式设计 */
 @media (max-width: 768px) {
+  .project-image {
+    aspect-ratio: 16/9;
+    min-height: 200px;
+  }
+  
   .project-content {
     padding: 20px;
   }
-
+  
   .project-title {
     font-size: 1.25rem;
   }
-
+  
   .project-links {
     flex-direction: column;
   }
-
+  
   .link-button {
     flex: none;
+  }
+}
+
+@media (max-width: 480px) {
+  .project-image {
+    min-height: 160px;
+  }
+  
+  .status-badge {
+    top: 12px;
+    right: 12px;
+    padding: 3px 10px;
+    font-size: 0.65rem;
   }
 }
 </style>

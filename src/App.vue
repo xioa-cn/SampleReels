@@ -19,16 +19,6 @@ onMounted(() => {
     backgroundType.value = 'simple'
   }
 })
-
-// 检查WebGL支持
-onMounted(() => {
-  const canvas = document.createElement('canvas')
-  const gl = canvas.getContext('webgl') || canvas.getContext('experimental-webgl')
-  if (!gl) {
-    console.warn('WebGL not supported, using simple background')
-    webglSupported.value = false
-  }
-})
 const {appInformation} = useInformation();
 const projects = ref<Project[]>(appInformation.value)
 </script>
@@ -56,7 +46,7 @@ const projects = ref<Project[]>(appInformation.value)
     <!-- 头部 -->
       <header class="header">
         <div class="container">
-          <h1 class="title">我的作品集</h1>
+          <h1 class="title">XIOA的作品集</h1>
           <p class="subtitle">展示我的项目作品和技术积累</p>
         </div>
       </header>
@@ -77,7 +67,7 @@ const projects = ref<Project[]>(appInformation.value)
       <!-- 页脚 -->
       <footer class="footer">
         <div class="container">
-          <p>&copy; 2024 我的作品集. All rights reserved.</p>
+          <p>&copy; 2025 作品集.</p>
         </div>
       </footer>
   </div>
@@ -199,7 +189,9 @@ const projects = ref<Project[]>(appInformation.value)
 
 .projects-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  grid-template-columns: 1fr;
+  max-width: 800px;
+  margin: 0 auto;
   gap: 30px;
   animation: fadeInUp 0.8s ease-out 0.4s both;
 }
@@ -276,6 +268,7 @@ const projects = ref<Project[]>(appInformation.value)
 
   .projects-grid {
     grid-template-columns: 1fr;
+    max-width: 100%;
     gap: 20px;
   }
 
