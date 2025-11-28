@@ -37,9 +37,9 @@ export function useInformation() {
                 '软件内部数据对外开放模式，内置Garnet、Rpc服务器、共享内存通信订阅，以及多种数据库支持。' +
                 '配合 WPF 数据绑定与命令系统，既能享受 Prism 架构的规范化开发优势，又能摆脱固定框架约束，让架构设计完全贴合业务场景，尤其适合需要深度定制交互逻辑或轻量化部署的项目。',
             technologies: ['.net 8.0', 'WPF', 'XPrism', 'HandyControl', 'I18n', 'EFCore', 'PgSql', 'Mysql', 'Sqlite', 'MsSql'],
-            link: 'https://github.com/xioa-cn/PressMachineSystem.AutoConfigSystem',
+            link: 'https://github.com/xioa-cn/WPF.Admin.Template.Core',
             image: getPublicImagePath('WPF.png'),
-            github: 'https://github.com/your-username/chat-app',
+            github: 'https://github.com/xioa-cn/WPF.Admin.Template.Core',
             status: 'completed'
         },
         {
